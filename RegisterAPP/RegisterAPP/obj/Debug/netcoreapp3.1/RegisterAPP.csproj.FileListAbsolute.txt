@@ -148,7 +148,6 @@ D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\Razor\Views\Registry\GetAllTodaysAttendanceReports.cshtml.g.cs
-D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\Razor\Views\sregister\Create.cshtml.g.cs
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
@@ -160,3 +159,4 @@ D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\RegisterAPP.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\RegisterAPP.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\Razor\Views\Term\GetCurrentTermsReports.cshtml.g.cs
+D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\Razor\Views\Register\Create.cshtml.g.cs

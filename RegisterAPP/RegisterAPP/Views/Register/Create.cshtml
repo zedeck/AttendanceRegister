@@ -1,0 +1,99 @@
+﻿@model RegisterAPP.Models.Registry
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>Mark Daily Registry</h3>
+<hr />
+
+<div class="row">
+    <div class="col-md-9">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="ClassName" class="control-label"></label>
+
+
+                <select asp-for="ClassName">
+                    <option selected disabled>Select Class Name</option>
+                    <option>Class 8A</option>
+                    <option>Class 8B</option>
+                    <option>Class 9A</option>
+                    <option>Class 10B</option>
+                    <option>Class 11A</option>
+                    <option>Class 12A</option>
+                </select>
+
+                <span asp-validation-for="ClassName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grade" class="control-label"></label>
+                <input asp-for="Grade" class="form-control" />
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentName" class="control-label"></label>
+                <input asp-for="StudentName" class="form-control" />
+                <span asp-validation-for="StudentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" id="currentDate" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" id="currentTime" class="form-control" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IsPresent" class="control-label">Present: </label>
+
+                <input type="radio" name="IsPresent" value="True" />True
+                <input type="radio" name="IsPresent" value="False" />False
+
+                <span asp-validation-for="IsPresent" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+                <button type="button" class="btn btn-info btn-group-lg" onclick="location.href='@Url.Action("Index","Home")'">Back</button>
+            </div>
+            <b>@ViewBag.message</b>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+
+    const getTwoDigits = (value) => value < 10 ? `0${value}` : value;
+
+    const formatDate = (date) => {
+        const day = getTwoDigits(date.getDate());
+        const month = getTwoDigits(date.getMonth() + 1); // add 1 since getMonth returns 0-11 for the months
+        const year = date.getFullYear();
+
+        return `${year}-${month}-${day}`;
+    }
+
+    const formatTime = (date) => {
+        const hours = getTwoDigits(date.getHours());
+        const mins = getTwoDigits(date.getMinutes());
+
+        return `${hours}:${mins}`;
+    }
+
+    const date = new Date();
+    document.getElementById('currentDate').value = formatDate(date);
+    document.getElementById('currentTime').value = formatTime(date);
+
+    </script>
+}

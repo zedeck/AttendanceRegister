@@ -1,4 +1,5 @@
 ﻿using AutoMapper.Mappers;
+using RegisterAPP.Dtos;
 using RegisterAPP.Interfaces;
 using RegisterAPP.Models;
 using System;
@@ -20,7 +21,16 @@ namespace RegisterAPP.Data
             _context = context;
         }
 
-         //Gets all attendance reports recorded today
+        public void CreateRecord(Registry registry)
+        {
+            if (registry == null)
+            {
+                throw new ArgumentNullException(nameof(registry));
+            }
+            _context.AttendaceRegistry.Add(registry);
+        }
+
+        //Gets all attendance reports recorded today
         public IEnumerable<Registry> GetAllTodaysAttendanceReports()
         {
             //return _context.AttendaceRegistry.ToList();

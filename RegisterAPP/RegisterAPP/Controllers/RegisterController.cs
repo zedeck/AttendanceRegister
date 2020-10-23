@@ -2,58 +2,65 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RegisterAPP.Data;
+using RegisterAPP.Interfaces;
 using RegisterAPP.Models;
 
 namespace RegisterAPP.Controllers
 {
-    public class sregisterController : Controller
+    public class RegisterController : Controller
     {
-        private readonly RegistryContext _registryRepo;
+        private readonly IRegistry _registryRepo;
+        private readonly IMapper _mapper;
 
-        public sregisterController(RegistryContext registryRepo)
+        public RegisterController(IRegistry registryRepo, IMapper mapper)
         {
             _registryRepo = registryRepo;
+            _mapper = mapper;
         }
-        // GET: sregisterController
+        
+        // GET: TestController
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: sregisterController/Details/5
+        // GET: TestController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: sregisterController/Create
+        // GET: TestController/Create
         public ActionResult Create()
         {
-
             return View();
         }
 
-        // POST: sregisterController/Create
+        // POST: TestController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Registry registry)
+        public ActionResult Create(Registry collection)
         {
-            _registryRepo.Add(registry);
+            var registryModel = _mapper.Map<Registry>(collection);
+            _registryRepo.CreateRecord(registryModel);
             _registryRepo.SaveChanges();
-            ViewBag.message = "The user " + registry.StudentName + " is saved successfully";
+
+            //var registryReadDto = _mapper.Map<DailyRegistryReadDto>(registryModel);
+            //return CreatedAtRoute(nameof(GetCommandById), new { Id = commandReadDto.Id }, commandReadDto);
+            ViewBag.message = "The user " + registryModel.StudentName + " is saved successfully";
             return View();
         }
 
-        // GET: sregisterController/Edit/5
+        // GET: TestController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: sregisterController/Edit/5
+        // POST: TestController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -68,13 +75,13 @@ namespace RegisterAPP.Controllers
             }
         }
 
-        // GET: sregisterController/Delete/5
+        // GET: TestController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: sregisterController/Delete/5
+        // POST: TestController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
