@@ -29,12 +29,6 @@ namespace RegisterAPP.Data
             return _context.AttendaceRegistry.Where(x => x.Date == Receiving_Date.Date).ToList();
         }
 
-        public IEnumerable<Registry> GetCurrentStudents(string studentName)
-        {
-            return _context.AttendaceRegistry.Where(m => m.StudentName == studentName).ToList();
-            
-        }
-
         public IEnumerable<Registry> GetCurrentTermAttendanceReport(string className)
         {
             //Compute the current term

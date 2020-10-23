@@ -29,40 +29,41 @@ namespace RegisterAPP.Controllers
         public ActionResult<IEnumerable<TermReportReadDto>> GetCurrentTermsReports(string className)
         {
 
-            var reportStudents = _registryContext.GetCurrentTermAttendanceReport(className); 
-            var reportItems = _registryContext.GetCurrentTermAttendanceReport(className);
+            var reg = _registryContext.GetCurrentTermAttendanceReport(className);
+            List<string> students = reg.Select(o => o.StudentName).Distinct().ToList();
+            var termReportReadDto = new List<TermReportReadDto>();
             int presentCount = 0;
             int absentCount = 0;
-            var tReport = new List<TermReportReadDto>();
 
-
-            foreach (var items in reportStudents)  // Godwil 
+            string nameOfClass = "";
+            string nameOfGrade = "";
+            
+            
+            foreach (var currStudent in students)
             {
-
-                foreach (var innetItems in reportItems)   //Godwill
+                foreach (var listOfItems in reg)
                 {
-                    //var reportStudents = _registryContext.GetCurrentStudents(innetItems.StudentName);
-                    if (items.StudentName == innetItems.StudentName)
+                    if(currStudent == listOfItems.StudentName)
                     {
-                        if (innetItems.IsPresent)
-                        {
+                        if (listOfItems.IsPresent)
                             presentCount++;
-
-                        }
                         else
-                        {
                             absentCount++;
-                        }
 
+                        nameOfClass = listOfItems.ClassName;
+                        nameOfGrade = listOfItems.Grade;
 
                     }
-                    tReport.Add(new TermReportReadDto { ClassName = items.ClassName, Grade = items.Grade,StudentName= items.StudentName, ClassesAttended = presentCount, ClassesMissed = absentCount});
                 }
-
+                termReportReadDto.Add(new TermReportReadDto { ClassName = nameOfClass, Grade = nameOfGrade, StudentName = currStudent, ClassesAttended = presentCount, ClassesMissed = absentCount });
+                //Reset values
+                presentCount = 0;
+                absentCount = 0;
+                nameOfClass = "";
+                nameOfGrade = "";
             }
 
-            return View(tReport);
-            //return View(_mapper.Map<IEnumerable<TermReportReadDto>>(reportItems));
+            return View(termReportReadDto);
         }
     }
 }
