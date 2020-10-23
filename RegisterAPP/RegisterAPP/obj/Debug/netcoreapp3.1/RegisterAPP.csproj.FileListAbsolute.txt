@@ -155,8 +155,10 @@ D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\X.PagedList.dll
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll
+D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\Razor\Views\Term\GetCurrentTermsReports.cshtml.g.cs
+D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\Razor\Views\Register\Create.cshtml.g.cs
+D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\dotnet-bundle.dll
+D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\bin\Debug\netcoreapp3.1\NUglify.dll
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\RegisterAPP.csproj.CoreCompileInputs.cache
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\RegisterAPP.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\RegisterAPP.MvcApplicationPartsAssemblyInfo.cache
-D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\Razor\Views\Term\GetCurrentTermsReports.cshtml.g.cs
-D:\Projects\CSGi\AttendanceRegister\RegisterAPP\RegisterAPP\obj\Debug\netcoreapp3.1\Razor\Views\Register\Create.cshtml.g.cs
