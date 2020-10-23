@@ -1,0 +1,39 @@
+﻿@using RegisterAPP.Models;
+@using RegisterAPP.Dtos;
+
+@model IEnumerable<TermReportReadDto>
+
+@{
+    ViewData["Title"] = "GetCurrentTermsReports";
+}
+
+<h3>GetCurrentTermsReports</h3>
+
+<hr />
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>ClassName</th>
+            <th>Grade</th>
+            <th>StudentName</th>
+            <th>Attended</th>
+            <th>Missed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TermReportReadDto termReportReadDto in Model)
+        {
+            <tr>
+                <td>@termReportReadDto.ClassName</td>
+                <td>@termReportReadDto.Grade</td>
+                <td>@termReportReadDto.StudentName</td>
+                <td>@termReportReadDto.ClassesAttended</td>
+                <td>@termReportReadDto.ClassesMissed</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index","Home")'">Back</button>
+</div>

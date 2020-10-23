@@ -1,0 +1,40 @@
+﻿@using RegisterAPP.Models;
+@using RegisterAPP.Dtos;
+ 
+@model IEnumerable<DailyRegistryReadDto>
+ 
+@{
+    ViewData["Title"] = "GetAllTodaysAttendanceReports";
+}
+
+<h3>Today's Attendance Report</h3>
+<hr />
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>ClassName</th>
+        <th>Grade</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>StudentName</th>
+        <th>IsPresent</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (DailyRegistryReadDto registerReadDto in Model)
+    {
+<tr>
+    <td>@registerReadDto.ClassName</td>
+    <td>@registerReadDto.Grade</td>
+    <td>@registerReadDto.Date</td>
+    <td>@registerReadDto.Time</td>
+    <td>@registerReadDto.StudentName</td>
+    <td>@registerReadDto.IsPresent</td>
+</tr>
+    }
+        </tbody>
+</table>
+
+<div>
+    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Index","Home")'">Back</button>
+</div>
