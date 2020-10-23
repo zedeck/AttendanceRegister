@@ -16,8 +16,8 @@ namespace RegisterAPP.Interfaces
         //------------------
         //Term
         IEnumerable<Registry> GetCurrentTermAttendanceReport(string className); //Gets attendance report for the current term 
-        
 
 
+        IEnumerable<Registry> GetCurrentStudents(string studentName);
     }
 }
