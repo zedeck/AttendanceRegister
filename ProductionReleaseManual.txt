@@ -3,15 +3,36 @@ This guide explains ways of deploying and running Test/Production release.
 1. In the ProductionRelease folder unzip the FolderCopyVersion/netcoreapp3.1 To the folder of your choice
 Then follow the steps to deploy.
 
-Step 1:  Change the appsettings.json connecstion string below to point to the right server and database instance.
+Step 1:  Change the appsettings.json connection string below to point to the right server and database instance.
 
 "ConnectionStrings": {
     "RegistryConnection": "Server=DESKTOP-8QOB85E\\SQLEXPRESS;Initial Catalog=ClassRegistryDB;User ID=CommanderAPI; Password=Commander001;"
   },
 
+nb: Change Server=DESKTOP-8QOB85E\\SQLEXPRESS to the correct server and db instance of your environment.
+
 Step 2: Create a database and table using the script below:
 
+//-----------------
+USE master
+GO
 
+CREATE DATABASE ClassRegistryDB       
+GO
+
+USE ClassRegistryDB
+GO
+
+CREATE TABLE AttendaceRegistry(
+    RegistryID int IDENTITY(1,1) PRIMARY KEY,
+    ClassName nvarchar(max) NOT NULL,
+    Grade nvarchar(max) NOT NULL,
+    Date datetime2(7) NOT NULL,
+    Time time(7) NULL,
+    StudentName nvarchar(max) NOT NULL,
+    IsPresent bit NOT NULL
+);
+GO
 
 Step 3: Copy Files to Preferred IIS Location. Now you need to copy your publish output to where you want the files to live. ...
 Step 4: Create Application in IIS. ...
