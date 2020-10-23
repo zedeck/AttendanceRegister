@@ -1,0 +1,19 @@
+This guide explains ways of deploying and running Test/Production release.
+
+1. In the ProductionRelease folder unzip the FolderCopyVersion/netcoreapp3.1 To the folder of your choice
+Then follow the steps to deploy.
+
+Step 1:  Change the appsettings.json connecstion string below to point to the right server and database instance.
+
+"ConnectionStrings": {
+    "RegistryConnection": "Server=DESKTOP-8QOB85E\\SQLEXPRESS;Initial Catalog=ClassRegistryDB;User ID=CommanderAPI; Password=Commander001;"
+  },
+
+Step 2: Create a database and table using the script below:
+
+
+
+Step 3: Copy Files to Preferred IIS Location. Now you need to copy your publish output to where you want the files to live. ...
+Step 4: Create Application in IIS. ...
+Step 5: Load Your App!
+

@@ -1,0 +1,85 @@
+Welcome to my tiny Attendance register App.
+This is a guide into running in dev environment.
+
+//-------------------------------------
+//Cloning the source code
+//-------------------------------------
+I have shared the source code in my Git Repo below:
+
+ [ https://github.com/zedeck/AttendanceRegister.git ]
+
+NB: This User Manual is also included in the repo.
+
+open git bash and run 
+git clone https://github.com/zedeck/AttendanceRegister.git to your required directory or location.
+
+
+
+//-------------------------------------
+Installing Entity framework
+//-------------------------------------
+
+NB: In order to use entity framework make sure it is installed.
+To install ef run the following commands either in the Visual Studio Console, VSCode Console or PowerShell run as Administrator.
+
+1. Install dotnet entity framework
+
+   [ dotnet tool install --global dotnet-ef ]
+
+2. Update dotnet entity framework
+
+   [ dotnet tool update --global dotnet-ef ]
+
+3. Add Microsoft.EntityFrameworkCore.Design package to project
+
+   [ dotnet add package Microsoft.EntityFrameworkCore.Design ]
+
+4. Verify the installation
+   [ dotnet ef ]
+
+   Output:
+
+               _/\__
+               ---==/    \\
+         ___  ___   |.    \|\
+        | __|| __|  |  )   \\\
+        | _| | _|   \_/ |  //|\\
+        |___||_|       /   \\\/\\
+
+
+
+//-----------------------------------
+Now open the Cloned project solution with an IDE of choice( Note this project was developed in Visual studio 2019 CE with dotnet core 3.1 ).
+If you do not have dotnet core you need to install dotnet core 3.1 sdk from the following:
+
+[ https://dotnet.microsoft.com/download/dotnet-core/3.1 ] Note to download the correct version for your IDE
+
+//-----------------------------------
+Now open the project solution and build it to download all required Nuget Packages
+Once complete do the following:
+
+1. Change the connection strings in appsettings.json file.
+
+  "ConnectionStrings": {
+    "RegistryConnection": "Server=[(localdb)\\mssqllocaldb] ;Database=[DatabaseName];Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+
+Where [DatabaseName] is the name of your database and [(localdb)\\mssqllocaldb] is the name of your server and db instance
+
+Leave "RegistryConnection" as is.
+
+//-----------------------------------
+//Perform Entity framework migrations
+On the console run the following:
+
+1. dotnet ef migrations add InitialCreate
+2. dotnet ef database update
+
+//-------------------------------------
+Now you are ready to roll.....
+
+
+
+
+
+ 
